@@ -49,8 +49,6 @@ MY_APPS = [
     'Projects'
 ]
 
-if os.environ.get('DEBUG', 'True') == 'True':
-    MY_APPS.append('django_browser_reload')
 
 INSTALLED_APPS += MY_APPS
 
@@ -65,8 +63,10 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-if os.environ.get('DEBUG', 'True') == 'True':
+if DEBUG:
+    MY_APPS.append('django_browser_reload')
     MIDDLEWARE.append('django_browser_reload.middleware.BrowserReloadMiddleware')
+
 
 ROOT_URLCONF = 'Portfolio.urls'
 
