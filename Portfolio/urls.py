@@ -17,5 +17,7 @@ urlpatterns = [
     path("Projects/", pro_views.pro_fun, name="projects"),
     path("Certificates/", certificates_views.certificates_fun, name="certificates"),
     path("Contact/", contact_views.contact_fun, name="contact"),
-    path("__reload__/", include("django_browser_reload.urls")),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+if settings.DEBUG:
+    urlpatterns += [path("__reload__/", include("django_browser_reload.urls"))]
