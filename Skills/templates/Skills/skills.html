@@ -1,0 +1,87 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Skills{% endblock %}
+
+{% block body %}
+<div class='main_body'>
+
+    <div>
+        <div>
+            <h1 class='heading'><b>Frontend</b></h1>
+            <div class='data'>
+                {% for i in frontend_var %}
+                <figure class='skill_fig'>
+                <img src="{{i.image.url}}" alt="" class='image'>
+                <span class='img_name'>{{i.frontend_name}}</span>
+                </figure>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
+    <br> <br>
+
+    <div>
+        <div>
+            <h1 class='heading'><b>Languages</b></h1>
+            <div class='data'>
+                {% for i in lang_var %}
+                <figure class='skill_fig'>
+                <img src="{{i.image.url}}" alt="" class='image'>
+                <span class='img_name'>{{i.lang}}</span>
+                </figure>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
+    <br> <br>
+
+    <div>
+        <div>
+            <h1 class='heading'><b>Framework</b></h1>
+            <div class='data'>
+                <figure class='skill_fig'>
+                {% for i in frame_var %}
+                <img src="{{i.image.url}}" alt="" class='image'>
+                <span class='img_name'>{{i.framework}}</span>
+                {% endfor %}
+                </figure>
+            </div>
+        </div>
+    </div>
+
+    <br> <br>
+
+    <div>
+        <div>
+            <h1 class='heading'><b>Database</b></h1>
+            <div class='data'>
+                {% for i in database_var %}
+                <figure class='skill_fig'>
+                <img src="{{i.image.url}}" alt="" class='image'>
+                <span class='img_name'>{{i.database}}</span>
+                </figure>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
+    <br> <br>
+
+    <div>
+        <div>
+            <h1 class='heading'><b>Logical</b></h1>
+            <div class='data'>
+                <figure class='skill_fig'>
+                {% for i in dsa_var %}
+                <img src="{{i.image.url}}" alt="" class='image'>
+                <span class='img_name'>{{i.dsa}}</span>
+                </figure>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
+</div>
+{% endblock %}

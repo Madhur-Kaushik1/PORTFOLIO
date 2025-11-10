@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block title %}Projects{% endblock %}
+
+{% block body %}
+
+
+<div class="pro_div">
+
+        <div class='pro_data_div'>
+
+            {% for i in  pro_dict%}
+
+            <figure class='pro_fig'>
+            
+                <h1 class='pro_heading'>{{i.pro_name}}</h1>
+                <img src="{{i.pro_img.url}}" alt="" class="pro_image">
+
+                <div class='pro_url_div'>
+                    <a href="{{i.web_url}}" class='pro_url'>View</a>
+                    <a href="{{i.code_url}}" class='pro_url'>Code</a>
+                </div>
+
+            </figure>
+
+            {% endfor %}
+
+        </div>
+
+</div>
+{% endblock %}
